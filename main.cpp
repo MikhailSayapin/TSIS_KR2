@@ -34,7 +34,7 @@ int main()
 	Chromosom c2(x[1], y[1]);
 	Chromosom c3(x[2], y[2]);
 	Chromosom c4(x[3], y[3]);
-	vector<Chromosom> v;
+	vector<Chromosom> v; //Создаём вектор хромосом
 	v.push_back(c1);
 	v.push_back(c2);
 	v.push_back(c3);
@@ -43,14 +43,14 @@ int main()
 	int N = 1;
 	while (N <= 100)
 	{
-		sort(v.begin(), v.end(), [](Chromosom &c1, Chromosom &c2)
+		sort(v.begin(), v.end(), [](Chromosom &c1, Chromosom &c2) //Сортируем в порядке убывания
 		{
 			return c1.value > c2.value;
 		});
 		x[3] = x[0];
 		swap(y[0], y[1]);
 		y[3] = y[2];
-		y[2] = y[1];
+		y[2] = y[1]; //Скрещиваем 1-ую хромосому со 2ой и 3ей
 
 		y[rand() % 4] += rand()%2;
 		x[rand() % 4] += rand()%2; // Мутация случайной хромосомы
@@ -71,11 +71,11 @@ int main()
 		}
 		cout << endl;
 		cout << "=================================" << endl;
-		Chromosom c1(x[0], y[0]);
+		Chromosom c1(x[0], y[0]); //Создаём новое поколение
 		Chromosom c2(x[1], y[1]);
 		Chromosom c3(x[2], y[2]);
 		Chromosom c4(x[3], y[3]);
-		vector<Chromosom> v;
+		vector<Chromosom> v; //Новый вектор
 		v.push_back(c1);
 		v.push_back(c2);
 		v.push_back(c3);
