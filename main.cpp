@@ -26,8 +26,8 @@ int main()
 	double x[4], y[4];
 	for (int i = 0; i < 4; i++) //Заполняем массив аргументов случайными значениями
 	{
-		x[i] = rand()%100;
-		y[i] = rand()%100;
+		x[i] = rand()%2 - 2;
+		y[i] = rand()%2 - 2;
 	}
 
 	Chromosom c1(x[0], y[0]);
